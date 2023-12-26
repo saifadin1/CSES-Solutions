@@ -24,18 +24,26 @@ int n , m , ar[N];
 
 void solve(){
 	cin >> n >> m;
-	for(int i=0; i<n; i++)
-		cin >> ar[i];
 	multiset<int> s;
-	for(int i=0; i<m; i++){
+	for(int i=0; i<n; i++){
 		int in;
 		cin >> in;
 		s.insert(in);
 	}
-	for(int i=0; i<n; i++){
+	for(int i=0; i<m; i++)
+		cin >> ar[i];
+	for(int i=0; i<m; i++){
 		auto it = s.lower_bound(ar[i]);
 		if(it == s.end() || *it > ar[i]){
-			auto it2 = it - 1;
+			if(it == s.begin()){
+				cout << "-1\n";
+			} else {
+				cout << *(--it) << '\n';
+				s.erase(it);
+			}
+		} else {
+			cout << *it << '\n';
+			s.erase(it);
 		}
 	}
 }	
