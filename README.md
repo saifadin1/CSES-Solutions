@@ -4,7 +4,7 @@
 
 | Topic         | Number Solved | Progress                                  |
 |-----------------------|---------------|-------------------------------------------|
-| Introductory Problems |     1/19     |  ![](https://geps.dev/progress/5)        |
+| Introductory Problems |     11/19     |  ![](https://geps.dev/progress/57)        |
 | Sorting and Searching |     0/35     |  ![](https://geps.dev/progress/0)        |
 | Dynamic Programming   |     0/19     |  ![](https://geps.dev/progress/0)        |
 | Graph Algorithms      |     0/36     |  ![](https://geps.dev/progress/0)        |
