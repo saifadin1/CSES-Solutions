@@ -5,7 +5,7 @@
 | Topic         | Number Solved | Progress                                  |
 |-----------------------|---------------|-------------------------------------------|
 | Introductory Problems |     0/19     |  ![](https://geps.dev/progress/0)        |
-| Sorting and Searching |     0/35     |  ![](https://geps.dev/progress/0)        |
+| Sorting and Searching |     1/35     |  ![](https://geps.dev/progress/2)        |
 | Dynamic Programming   |     11/19     |  ![](https://geps.dev/progress/57)        |
 | Graph Algorithms      |     2/36     |  ![](https://geps.dev/progress/5)        |
 | Range Queries         |     0/19     |  ![](https://geps.dev/progress/0)        |
