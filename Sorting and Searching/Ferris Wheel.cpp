@@ -20,19 +20,29 @@ template<typename T> bool chkmax(T &a, T b){return (b > a) ? a = b, 1 : 0;}
 int dx[] = {0 , 1 , 0 , -1};
 int dy[] = {1 , 0 , -1 , 0};
 const int N = 1e6+17;
-int n , k , ar[N];
+int n , k;
 
 void solve(){
 	cin >> n >> k;
+	std::vector<int> ar(n);
 	for(int i=0; i<n; i++){
 		cin >> ar[i];	
 	}
-	sort(ar , ar + n);
-	int ans = 0 , s = 0;
-	for(int i=0; i<n ;i++){
-		if(s + ar[i] > k) ans ++ , s = 0;
+	sort(ar.begin() , ar.end());
+	int ans = 0;
+	int l = 0 , r = n - 1;
+	while(l <= r){
+		if(l == r){
+			r--;
+		} else if(ar[r] + ar[l] > k){
+			r--;
+		} else{
+			r--;
+			l++;
+		}
+		ans ++;
 	}
-	cout << ans + 1 << '\n';
+	cout << ans << '\n';
 }	
   
 main() {
