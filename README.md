@@ -1,6 +1,6 @@
 # CSES-Solutions
 
-## Problem Set Progress
+## Tracking Progress with Problem Sets
 
 | Topic         | Number Solved | Progress                                  |
 |-----------------------|---------------|-------------------------------------------|
