@@ -29,10 +29,10 @@ void solve(){
 		int in;
 		cin >> in;
 		if(mp[k - in]){
-			cout << mp[k - in] + 1 << ' ' << i+1;
+			cout << mp[k - in] << ' ' << i+1;
 			return;
 		}
-		mp[in] = i;
+		mp[in] = i + 1;
 	}
 	cout << "IMPOSSIBLE";
 }	
