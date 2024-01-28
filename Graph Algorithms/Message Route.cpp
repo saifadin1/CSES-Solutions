@@ -24,7 +24,7 @@ int dy[8]={0,-1,0,1,1,-1,-1,1};
 const int N = 2e5 + 123;
 
 void sovle(){
-	int n , m;
+  int n , m;
   cin >> n >> m;
   std::vector<std::vector<int>> graph(n + 1);
   std::vector<int> vis(n + 1);
@@ -69,6 +69,7 @@ void sovle(){
       cur = from[cur];
     }
     reverse(v.begin() , v.end());
+    v.push_back(n);
     cout << v.size() << '\n';
     for(int i : v)
       cout << i << ' ';
@@ -80,12 +81,12 @@ main() {
     cin.tie(0);cin.sync_with_stdio(0);
     cout.tie(0);cout.sync_with_stdio(0);
    //  freopen("ladder.in", "r", stdin);
-	 	// freopen("ladder.out", "w", stdout);  
+    // freopen("ladder.out", "w", stdout);  
     int t = 1;
-  //	cin >> t;
+  //  cin >> t;
 
      for (int L = 0; L < t; L++){
-     	//cout << "Case " << L + 1 << ": ";
+      //cout << "Case " << L + 1 << ": ";
        sovle();    
      }
 } 
