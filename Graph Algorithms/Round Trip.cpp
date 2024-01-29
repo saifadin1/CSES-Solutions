@@ -35,43 +35,40 @@ void solve(){
     graph[u].push_back(v);
     graph[v].push_back(u);
   }
-  function<bool(int)> bfs = [&](int u){
-    queue<int>q;
-    q.push(u);
-    int now = 1;
-    while(q.size()){
-      for(int i=0; i<(int)q.size(); i++){
-        int cur = q.front();
-        q.pop();
-        for(int v : graph[cur]){
-          if(!vis[v]){
-            vis[v] = 1;
-            from[v] = from[cur];
-            q.push(v);
-          } else if(now >= 2){
-            from[cur] = v;
-            return true;;
-          }
+  int now = 1 , x = -1;
+  function<int(int , int)> dfs = [&](int u , int p){
+    int ret = -1;
+    vis[u] = now;
+    for(int v : graph[u]){
+      if(vis[v] == 0){
+        from[v] = u;
+        ret = dfs(v , u);
+      } else if(v != p){
+        if(vis[v] == vis[u]){
+          x = u;
+          return v;
         }
       }
-      now ++;
     }
-    return false;
+    return ret;
   };
-  bool ok = false;
   for(int i=1; i<=n; i++){
     if(!vis[i]){
-      if(bfs(i)){
+      now++;
+      int ret = dfs(i , -1);
+      if(~ret){
         std::vector<int> v;
-        int cur = i; 
-        while(cur != from[cur]){
+        int cur = ret; 
+        while(cur != x){
           v.push_back(cur);
           cur = from[cur];
         }
-        cout << v.size() << '\n';
+        cout << v.size() + 2 << '\n';
+        cout << x << ' '; 
         for(int j : v){
           cout << j << ' ';
         }
+        cout << x;
         return;
       }
     }
