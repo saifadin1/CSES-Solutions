@@ -23,30 +23,15 @@ int dy[8]={0,-1,0,1,1,-1,-1,1};
 
 const int N = 2e5 + 123;
 
+struct edge {
+  int u , v , w;
+  edge(int _u , int _v , int _w): u(_u), v(_v), w(_w) {}
+};
+
 void solve(){
-  int n , m , q;
-  cin >> n >> m >> q ;
-  std::vector<std::vector<int>> dis(n + 1, std::vector<int>(n + 1 , oo));
-  for(int i=0; i<m; i++){
-    int u , v , w;
-    cin >> u >> v >> w;
-    chkmin(dis[u][v] , w);
-    chkmin(dis[v][u] , w);
-  }
-  // Floyd Warshall
-  for(int i=1; i<=n; i++)
-    for(int j=1; j<=n; j++)
-      for(int k=1; k<=n; k++)
-        if(dis[j][i] != oo &&  dis[i][k] != oo )
-          chkmin(dis[j][k] , dis[j][i] + dis[i][k]);
-  while(q--){
-    int u , v;
-    cin >> u >> v;
-    if(u == v){
-      cout << "0\n";
-    } else 
-      cout << (min(dis[u][v] , dis[v][u]) >= oo ? -1 : min(dis[v][u] , dis[u][v])) << '\n';
-  }
+  int n , m;
+  cin >> n >> m;
+  
 }
 
 
