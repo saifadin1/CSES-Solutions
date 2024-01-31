@@ -23,30 +23,62 @@ int dy[8]={0,-1,0,1,1,-1,-1,1};
  
 const int N = 2e5 + 123;
  
+struct edge{
+  int u , v , w;
+  edge(int _u , int _v , int _w){
+    u = _u;
+    v = _v;
+    w = _w;
+  }
+};
+ 
 void solve(){
-  int n , m , q;
-  cin >> n >> m >> q ;
-  std::vector<std::vector<int>> dis(n + 1, std::vector<int>(n + 1 , oo));
+  int n , m;
+  cin >> n >> m;
+  std::vector<edge> edges;
+  std::vector<int> dis(n + 1 , oo);
+  std::vector<int> from(n + 1);
+  bool f = 0;
+  int x;
   for(int i=0; i<m; i++){
     int u , v , w;
     cin >> u >> v >> w;
-    chkmin(dis[u][v] , w);
-    chkmin(dis[v][u] , w);
+    if(u == v && w < 0) f = 1 , x = u; 
+    edges.push_back(edge(u , v , w));
   }
-  // Floyd Warshall
-  for(int i=1; i<=n; i++)
-    for(int j=1; j<=n; j++)
-      for(int k=1; k<=n; k++)
-        if(dis[j][i] != oo &&  dis[i][k] != oo )
-          chkmin(dis[j][k] , dis[j][i] + dis[i][k]);
-  while(q--){
-    int u , v;
-    cin >> u >> v;
-    if(u == v){
-      cout << "0\n";
-    } else 
-      cout << (min(dis[u][v] , dis[v][u]) >= oo ? -1 : min(dis[v][u] , dis[u][v])) << '\n';
+  int ptr = -1;
+  // bell-man ford
+  for(int i=0; i<n && ptr; i++){
+    ptr = 0;
+    for(auto j : edges){
+        if(chkmin(dis[j.v] , dis[j.u] + j.w))
+          from[j.v] = j.u , ptr = j.v;; 
+    }
+    if(!ptr){
+      cout << "NO\n";
+      return;
+    }
   }
+
+  // if ptr != 0 the must be a neg cycle
+
+
+  // go back n steps to be sure that ptr are in a cycle 
+  for(int i=0; i<n; i++)
+    ptr = from[ptr];
+
+
+  std::vector<int> cyc;
+  for(int i=ptr ; ; i=from[i]){
+    cyc.push_back(i);
+    if(i == ptr && cyc.size() > 1){
+      break;
+    }
+  }
+  reverse(cyc.begin() , cyc.end());
+  cout << "YES\n";
+  for(int i : cyc)
+    cout << i << ' ';
 }
  
  
@@ -62,4 +94,4 @@ main() {
       //cout << "Case " << L + 1 << ": ";
        solve();    
      }
-} 
+}
