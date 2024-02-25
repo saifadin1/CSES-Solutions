@@ -15,3 +15,4 @@
 | Geometry              |      0/7      |  ![](https://geps.dev/progress/0)        |
 | Advanced Techniques   |     0/24     |  ![](https://geps.dev/progress/0)        |
 | Additional Problems   |     0/77     |  ![](https://geps.dev/progress/0)        |
+| overall               |     48/300   | ![](https://geps.dev/progress/16) |
