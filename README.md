@@ -10,7 +10,7 @@
 | Graph Algorithms      |     15/36     |  ![](https://geps.dev/progress/41)        |
 | Range Queries         |     6/19     |  ![](https://geps.dev/progress/31)        |
 | Tree Algorithms       |     4/16     |  ![](https://geps.dev/progress/25)        |
-| Mathematics           |     5/31     |  ![](https://geps.dev/progress/16)        |
+| Mathematics           |     9/31     |  ![](https://geps.dev/progress/29)        |
 | String Algorithms     |     0/17     |  ![](https://geps.dev/progress/0)        |
 | Geometry              |      0/7      |  ![](https://geps.dev/progress/0)        |
 | Advanced Techniques   |     0/24     |  ![](https://geps.dev/progress/0)        |
