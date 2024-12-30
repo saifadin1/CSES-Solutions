@@ -19,18 +19,17 @@ const int mod = 998244353 , N = 2e5 + 9;
 
 
 void solve(){
-    int n;
-    cin >> n;
-    if(n == 1){
-        cout << 1;
-        return;
-    }
-    if(n < 4){
-        cout << "NO SOLUTION";
+    int x , y;
+    cin >> x >> y;
+    int layer = max(x , y);
+    int k = layer * 2 - 1;
+    int x = (k - 2) * (k - 2);
+    if(min(x , y) % 2 == 0){
+        cout << x + min(x , y);
     } else {
-        for(int i=n-1; i>=1; i-=2) cout << i << ' ';
-        for(int i=n; i>=1; i-=2) cout << i << ' ';
+        cout << x + layer - min(x , y);
     }
+    cout << '\n';
 }
 
 
@@ -39,10 +38,10 @@ main() {
     ios_base::sync_with_stdio(false);
     cin.tie(nullptr);
     cout.tie(nullptr);
-    #ifndef ONLINE_JUDGE
-    freopen("input.txt", "r", stdin);
-    freopen("output.txt", "w", stdout);
-    #endif
+    // #ifndef ONLINE_JUDGE
+    // freopen("input.txt", "r", stdin);
+    // freopen("output.txt", "w", stdout);
+    // #endif
 
     int t = 1;
     // cin >> t;
