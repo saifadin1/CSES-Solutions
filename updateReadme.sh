@@ -50,7 +50,8 @@ for topic in "${!topics[@]}"; do
 
     # Check if directory exists for the topic
     if [ -d "$topic" ]; then
-        solved_problems=$(find "$topic" -type f | wc -l)
+        # Count only .cpp files and exclude all other file types
+        solved_problems=$(find "$topic" -type f -name "*.cpp" | wc -l)
     else
         solved_problems=0
     fi
