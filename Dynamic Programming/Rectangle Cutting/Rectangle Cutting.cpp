@@ -19,28 +19,28 @@ mt19937_64 rng(chrono::steady_clock::now().time_since_epoch().count() * (random_
 
 const int mod = 998244353 , N = 2e5 + 9;
 
-void solve() {
-    int n , m;
-    cin >> n >> m;
-    vector<vector<int>> dp(n + 1, vector<int>(m + 1 , 1e9));
-    // dp[i][j] = min number of moves to cut i * j rectangle into squares
-    // try all possible cuts horizontally and vertically
-    for (int i=1; i<=n; i++) {
-        for (int j=1; j<=m; j++) {
-            if (i == j) {
-                dp[i][j] = 0;
-            } else {
-                for (int k=1; k<i; k++) {
-                    chkmin(dp[i][j], dp[k][j] + dp[i - k][j] + 1);
-                }
-                for (int k=1; k<j; k++) {
-                    chkmin(dp[i][j], dp[i][k] + dp[i][j - k] + 1);
-                }
-            }
-        }
+int n , m , ar[N] , dp[N];
+
+int fun(int i , int pre) {
+    if (i == n) {
+        return 0;
     }
 
-    cout << dp[n][m];
+    int ans = fun(i + 1 , pre);
+    if (ar[i] > pre) {
+        chkmax(ans , 1 + fun(i + 1 , ar[i]));
+    }
+
+    return ans;
+}
+
+void solve() {
+    cin >> n >> m;
+    for (int i=0; i<n; i++) {
+        cin >> ar[i];
+    }
+
+    cout << fun(0 , -1);
 } 
 
 
