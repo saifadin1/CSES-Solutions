@@ -6,7 +6,7 @@
 |-----------------------|---------------|-------------------------------------------|
 | Sorting and Searching | 18/35 | ![](https://geps.dev/progress/51) |
 | Graph Algorithms | 17/36 | ![](https://geps.dev/progress/47) |
-| Dynamic Programming | 12/19 | ![](https://geps.dev/progress/63) |
+| Dynamic Programming | 13/19 | ![](https://geps.dev/progress/68) |
 | Mathematics | 10/31 | ![](https://geps.dev/progress/32) |
 | Range Queries | 9/19 | ![](https://geps.dev/progress/47) |
 | Introductory Problems | 8/19 | ![](https://geps.dev/progress/42) |
@@ -15,5 +15,5 @@
 | Geometry | 0/7 | ![](https://geps.dev/progress/0) |
 | Advanced Techniques | 0/24 | ![](https://geps.dev/progress/0) |
 | Additional Problems | 0/77 | ![](https://geps.dev/progress/0) |
-| overall               | 79/300 | ![](https://geps.dev/progress/26) |
+| overall               | 80/300 | ![](https://geps.dev/progress/26) |
 
