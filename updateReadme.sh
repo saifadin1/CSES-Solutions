@@ -38,8 +38,9 @@ update_readme() {
 # Start the README content with the header
 readme_content="# CSES-Solutions\n\n## Tracking Progress with Problem Sets\n\n| Topic         | Number Solved | Progress                                  |\n|-----------------------|---------------|-------------------------------------------|\n"
 
-# Declare an array to store topic names and their solved counts
+# Declare an array to store topic names, solved counts, and progress
 declare -A solved_counts
+declare -A progress_counts
 topic_array=()
 
 # Loop through each topic and calculate the number of solved problems
@@ -56,22 +57,30 @@ for topic in "${!topics[@]}"; do
         solved_problems=0
     fi
 
-    # Store the solved problem count and topic in an array for sorting
+    # Calculate progress percentage
+    if (( total_problems > 0 )); then
+        progress=$(( (solved_problems * 100) / total_problems ))
+    else
+        progress=0
+    fi
+
+    # Store the solved problem count, progress, and topic in an array for sorting
     solved_counts["$topic"]=$solved_problems
-    topic_array+=("$topic,$solved_problems")
+    progress_counts["$topic"]=$progress
+    topic_array+=("$topic,$solved_problems,$progress")
 
     # Update overall counts
     overall_solved=$((overall_solved + solved_problems))
     overall_total=$((overall_total + total_problems))
 done
 
-# Sort the topic array based on the number of solved problems (in descending order)
-IFS=$'\n' sorted_topics=($(sort -t',' -k2 -nr <<<"${topic_array[*]}"))
+# Sort the topic array based on the progress (in descending order)
+IFS=$'\n' sorted_topics=($(sort -t',' -k3 -nr <<<"${topic_array[*]}"))
 unset IFS
 
 # Append the sorted topics to the README content
 for topic_entry in "${sorted_topics[@]}"; do
-    IFS=',' read -r topic solved_problems <<< "$topic_entry"
+    IFS=',' read -r topic solved_problems progress <<< "$topic_entry"
     total_problems=${topics[$topic]}
     
     # Append the topic progress to the README content

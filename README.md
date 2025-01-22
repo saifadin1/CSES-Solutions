@@ -4,12 +4,12 @@
 
 | Topic         | Number Solved | Progress                                  |
 |-----------------------|---------------|-------------------------------------------|
-| Graph Algorithms | 20/36 | ![](https://geps.dev/progress/55) |
-| Sorting and Searching | 19/35 | ![](https://geps.dev/progress/54) |
 | Introductory Problems | 14/19 | ![](https://geps.dev/progress/73) |
 | Dynamic Programming | 14/19 | ![](https://geps.dev/progress/73) |
-| Mathematics | 10/31 | ![](https://geps.dev/progress/32) |
+| Graph Algorithms | 20/36 | ![](https://geps.dev/progress/55) |
+| Sorting and Searching | 19/35 | ![](https://geps.dev/progress/54) |
 | Range Queries | 9/19 | ![](https://geps.dev/progress/47) |
+| Mathematics | 10/31 | ![](https://geps.dev/progress/32) |
 | Tree Algorithms | 4/16 | ![](https://geps.dev/progress/25) |
 | String Algorithms | 1/17 | ![](https://geps.dev/progress/5) |
 | Geometry | 0/7 | ![](https://geps.dev/progress/0) |
