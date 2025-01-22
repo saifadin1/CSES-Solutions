@@ -1,4 +1,4 @@
-# [CSES](https://cses.fi/problemset/)-Solutions
+# CSES-Solutions
 
 ## Tracking Progress with Problem Sets
 
