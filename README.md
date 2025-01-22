@@ -4,7 +4,7 @@
 
 | Topic         | Number Solved | Progress                                  |
 |-----------------------|---------------|-------------------------------------------|
-| Sorting and Searching | 18/35 | ![](https://geps.dev/progress/51) |
+| Sorting and Searching | 19/35 | ![](https://geps.dev/progress/54) |
 | Graph Algorithms | 17/36 | ![](https://geps.dev/progress/47) |
 | Dynamic Programming | 14/19 | ![](https://geps.dev/progress/73) |
 | Mathematics | 10/31 | ![](https://geps.dev/progress/32) |
@@ -15,5 +15,5 @@
 | Geometry | 0/7 | ![](https://geps.dev/progress/0) |
 | Advanced Techniques | 0/24 | ![](https://geps.dev/progress/0) |
 | Additional Problems | 0/77 | ![](https://geps.dev/progress/0) |
-| overall               | 81/300 | ![](https://geps.dev/progress/27) |
+| overall               | 82/300 | ![](https://geps.dev/progress/27) |
 
